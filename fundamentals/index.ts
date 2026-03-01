@@ -32,4 +32,50 @@ export function betterThanAverage(classPoints: number[], yourPoints: number) : b
   return false;
 }
 
-betterThanAverage([6, 7, 8, 5, 5, 6, 4, 6], 7);
+// betterThanAverage([6, 7, 8, 5, 5, 6, 4, 6], 7);
+
+// --------
+// Very simple, given a number, find its opposite (additive inverse).
+
+// Examples:
+
+// 1: -1
+// 14: -14
+// -34: 34
+
+export class Kata {
+  static opposite(n: number) {
+    return -n;
+  }
+}
+
+// console.log(Kata.opposite(1)); // -1
+
+// --------
+// Counting sheep...
+// Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+// For example,
+
+// [true,  true,  true,  false,
+//   true,  true,  true,  true ,
+//   true,  false, true,  false,
+//   true,  false, false, true ,
+//   true,  true,  true,  true ,
+//   false, false, true,  true]
+// The correct answer would be 17.
+
+// Hint: Don't forget to check for bad values like null/undefined
+
+export function countSheeps(arrayOfSheep: (boolean | undefined | null)[]) {
+  return arrayOfSheep.reduce((sum, sheep) => sheep ? sum + 1: sum, 0);
+}
+
+const count =countSheeps([true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  true,  true ,
+  false, false, true,  true]);
+
+  console.log(count);
